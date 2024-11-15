@@ -13,9 +13,15 @@ import java.util.List;
 import java.util.Properties;
 
 public class CustomPersistenceUnitInfo implements PersistenceUnitInfo {
+    private String PUName;
+
+    public CustomPersistenceUnitInfo(String PUName) {
+        this.PUName = PUName;
+    }
+
     @Override
     public String getPersistenceUnitName() {
-        return "my-persistence-unit";
+        return this.PUName;
     }
 
     @Override
